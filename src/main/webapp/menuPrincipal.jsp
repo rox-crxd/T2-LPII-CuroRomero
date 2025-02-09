@@ -13,16 +13,7 @@
 <h2 align="center">
 <a href="ControladorProveedor?accion=Registrar" style="text-decoration: none; color: white;">Registrar Proveedor</a>
 </h2>
-<table align="center" border="2">
-<tr>
-<td style="color: white;">Código</td>
-<td style="color: white;">Nombre</td>
-<td style="color: white;">Ruc</td>
-<td style="color: white;">Razón Social</td>
-<td style="color: white;">Email</td> 
-<td style="color: white;">Fecha Ing.</td> 
-<td colspan="2" style="color: white;">Acciones</td>
-</tr>
+
 <%
 	List<TblProveedorcl2> listadoproveedor=(List<TblProveedorcl2>)request.getAttribute("listar");
 
@@ -46,6 +37,5 @@ if(listadoproveedor != null){
 	<%
 }
 %>
-</table>
 </body>
 </html>

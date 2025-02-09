@@ -74,11 +74,11 @@ public class ControladorProveedor extends HttpServlet {
 				List<TblProveedorcl2> listar=crudimp.ListadoProveedor();
 				
 				request.setAttribute("listar", listar);
-				request.getRequestDispatcher("menuPrincipal.jsp").forward(request, response);
+				request.getRequestDispatcher("registrarProveedor.jsp").forward(request, response);
 				break;
 			case "Listar":
 
-				request.getRequestDispatcher("menuPrincipal.jsp").forward(request, response);
+				request.getRequestDispatcher("registrarProveedor.jsp").forward(request, response);
 				break;
 			}
 		}
@@ -121,7 +121,7 @@ public class ControladorProveedor extends HttpServlet {
 		List<TblProveedorcl2> listar=provImp.ListadoProveedor();
 		
 		request.setAttribute("listar",listar);
-		request.getRequestDispatcher("menuPrincipal.jsp").forward(request, response);
+		request.getRequestDispatcher("registrarProveedor.jsp").forward(request, response);
 	}
 
 }
