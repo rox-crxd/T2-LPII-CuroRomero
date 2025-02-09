@@ -40,46 +40,44 @@ public class ControladorProveedor extends HttpServlet {
 		
 		String accion=request.getParameter("accion");
 		if(accion!=null){
-			//aplicamos un switch
+
 			switch(accion){
 			case "Actualizar":
-				//Obtenemos el código
+
 				int cod=Integer.parseInt(request.getParameter("cod"));
-				//Asignamos los valores
+
 				tblprov.setIdProveedor(cod);
-				//Buscamos el codigo a actualizar
+
 				TblProveedorcl2 prov=crudimp.BuscarProveedor(tblprov);
-				SimpleDateFormat format=new SimpleDateFormat("dd/MM/yyyy");
-				//Asignamos los valores
-				//Para enviarlos hacia la vista(formulario actualizar)
+				SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+
 				request.setAttribute("codigo", prov.getIdProveedor());
 				request.setAttribute("nombre", prov.getNomProvecl2());
 				request.setAttribute("ruc", prov.getRucProvecl2());
 				request.setAttribute("razon", prov.getRsocialProvecl2());
 				request.setAttribute("email", prov.getEmailProvecl2());
 				request.setAttribute("fechaing", format.format(prov.getFeingProvecl2()));
-				//Redireccionamos
+
 				request.getRequestDispatcher("actualizarProveedor.jsp").forward(request, response);
-				break; //salimos
+				break; 
 			case "Registrar":
-				//redireccionamos a la vista jsp
+
 				request.getRequestDispatcher("registrarProveedor.jsp").forward(request, response);
 				break;
 			case "Eliminar":
-				//Obtenemos el código
+
 				int codEliminar=Integer.parseInt(request.getParameter("cod"));
-				//Asignamos los valores
+
 				tblprov.setIdProveedor(codEliminar);
-				//Invocamos al metodo eliminar
+
 				crudimp.EliminarProveedor(tblprov);
 				List<TblProveedorcl2> listar=crudimp.ListadoProveedor();
-				//Enviamos hacia la vista
+				
 				request.setAttribute("listar", listar);
-				//Redireccionamos
 				request.getRequestDispatcher("menuPrincipal.jsp").forward(request, response);
 				break;
 			case "Listar":
-				//redireccionamos a la vista jsp
+
 				request.getRequestDispatcher("menuPrincipal.jsp").forward(request, response);
 				break;
 			}

@@ -30,6 +30,10 @@
 				<td><input type="text" name="ruc" value="<%=ruc%>"></td>
 			</tr>
 			<tr>
+				<td>Razón Social</td>
+				<td><input type="text" name="razon" value="<%=razon%>"></td>
+			</tr>
+			<tr>
 				<td>Email</td>
 				<td><input type="text" name="email" value="<%=email%>"></td>
 			</tr>
